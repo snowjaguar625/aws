@@ -11,25 +11,10 @@ Flysystem S3 adapter for Flysystem version 1 and 2.
 composer require async-aws/flysystem-s3
 ```
 
-## Use
-```php
-use League\Flysystem\Filesystem;
-use AsyncAws\Flysystem\S3\S3FilesystemV2;
-use AsyncAws\S3\S3Client;
+## Documentation
 
-$adapter = new S3FilesystemV2(new S3Client(), 'bucket');
-$filesystem = new Filesystem($adapter);
-$resource = tmpfile();
+See https://async-aws.com/integration/flysystem.html for documentation.
 
-$filesystem->write('dir/path.txt', 'contents');
-$filesystem->writeStream('dir/path.txt', $resource);
+## Contribute
 
-$filesystem->delete('dir/path.txt');
-
-$filesystem->createDirectory('dir');
-$filesystem->deleteDirectory('dir');
-
-$lastModified = $filesystem->lastModified('path.txt');
-$mimeType = $filesystem->mimeType('path.txt');
-$fileSize = $filesystem->fileSize('path.txt');
-```
+Contributions are welcome and appreciated. Please read https://async-aws.com/contribute/
